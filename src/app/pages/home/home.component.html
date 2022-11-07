@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row m-5 p-2" *ngIf="showSpiner">
+        <div class="col-md-12 text-center">
+            <span class="loader"></span>
+        </div>
+    </div>
+    <div class="row m-5 p-2" *ngIf="isError">
+        <div class="col-md-12 text-center">
+            <span>Se ha producido un error</span>
+        </div>
+    </div>
+    <div class="row border border-primary m-5 p-2" *ngIf="showData">
+        <!-- We load the component when  we can use for show data -->
+        <app-data-table [dataFilms]="dataFilmResponse" (newItemEvent)="navigateFilm($event)"></app-data-table>
+    </div>
+</div>
